@@ -47,7 +47,7 @@ public class Main {
 
     InputStream stream = Files.newInputStream(qrelFile);
     BufferedReader br = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
-    System.out.println("Reading Relevant Scores...");
+    System.out.println("Reading Relevance Scores...");
 
     String line = br.readLine();
 
