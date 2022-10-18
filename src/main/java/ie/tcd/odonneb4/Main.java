@@ -52,20 +52,25 @@ public class Main {
           String line = br.readLine();
 
           while(line!=null) {
-              String[] entry = line.split(" ");
-              switch(entry[2]){
+              String[] score = line.split(" ");
+              switch(score[2]){
                   case "1":
-                      entry[2]="4";
+                	  score[2]="4";
+                      break;
                   case "2":
-                      entry[2]="3";
+                	  score[2]="3";
+                      break;
                   case "3":
-                      entry[2]="2";
+                	  score[2]="2";
+                      break;
                   case "4":
-                      entry[2]="1";
+                	  score[2]="1";
+                      break;
                   case "-1":
-                      entry[2]="5";
+                	  score[2]="5";
+                      break;
               }
-        	  iwriter.println(entry[0]+" 0 "+entry[1]+" "+entry[2]);
+        	  iwriter.println(score[0]+" 0 "+score[1]+" "+score[2]);
         	  line = br.readLine();
           }
           System.out.println("Correction completed.");
