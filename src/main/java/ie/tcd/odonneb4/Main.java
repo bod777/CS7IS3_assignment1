@@ -66,7 +66,7 @@ public class Main {
                       entry[2]="5 ";
               }
         	  iwriter.println(entry[0]+" 0 "+entry[1]+" "+entry[2]);
-        	  String line = br.readLine();
+        	  line = br.readLine();
           }
           System.out.println("Correction completed.");
       }
