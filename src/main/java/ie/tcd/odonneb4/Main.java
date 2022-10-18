@@ -24,7 +24,7 @@ public class Main {
         run_test("BM25_Classic");
         run_test("Classic_LMDirichlet");
         run_test("BM25_LMDirichlet");
-        correct_qrel();
+ //       correct_qrel();
      } catch (Exception e) {
         System.out.println(e.getClass());
      }
