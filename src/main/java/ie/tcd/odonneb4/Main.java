@@ -52,7 +52,12 @@ public class Main {
     String line = br.readLine();
 
     for (int i = 0; i < 1837; i++) {
-  	  String[] score = line.split(" ");
+  	  String[] entry = line.split(" ");
+  	  int[] score = new int[entry.length];
+  	  for(int i = 0;i < entry.length;i++)
+  	  {
+  		score[i] = Integer.parseInt(entry[i]);
+  	  }
 	  switch(score[2]){
 	    case "1":
 		  score[2]="4";
