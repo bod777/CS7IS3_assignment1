@@ -51,7 +51,7 @@ public class Main {
 
     String line = br.readLine();
 
-    for (int i = 0; i < 1837; i++) {:wq
+    for (int i = 0; i < 1837; i++) {
   	  String[] score = line.split(" ");
 	  switch(score[2]){
 	    case "1":
