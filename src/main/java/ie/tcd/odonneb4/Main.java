@@ -33,8 +33,8 @@ public class Main {
   public static void correct_qrel() {
 	  System.out.println("Correcting cranqrel file for trec_eval process...");
 	  final Path qrelFile = Paths.get("cran/cranqrel");
-	  String correctedFile = "cran/cranqrels_corrected.txt";
-      PrintWriter iwriter = new PrintWriter(correctedFile, "UTF-8");4
+	  String correctedFile = "cran/cranqrel_corrected.txt";
+      PrintWriter iwriter = new PrintWriter(correctedFile, "UTF-8");
       
       try(InputStream stream = Files.newInputStream(qrelFile)){
           BufferedReader br = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
