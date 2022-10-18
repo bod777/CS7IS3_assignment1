@@ -40,41 +40,42 @@ public class Main {
     System.out.println("Finished querying process for "+scoring+" test");
   }
   public static void correct_qrel() throws IOException {
-	  System.out.println("Correcting cranqrel file for trec_eval process...");
-	  final Path qrelFile = Paths.get("cran/cranqrel");
-	  String correctedFile = "cran/cranqrel_corrected.txt";
-      PrintWriter iwriter = new PrintWriter(correctedFile, "UTF-8");
-      
-      try(InputStream stream = Files.newInputStream(qrelFile)){
-          BufferedReader br = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
-          System.out.println("Reading Relevant Scores...");
+	    System.out.println("Correcting cranqrel file for trec_eval process...");
+	    final Path qrelFile = Paths.get("cran/cranqrel");
+	    String correctedFile = "cran/cranqrel_corrected.txt";
+	    PrintWriter iwriter = new PrintWriter(correctedFile, "UTF-8");
 
-          String line = br.readLine();
+	    InputStream stream = Files.newInputStream(qrelFile);
+	    BufferedReader br = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
+	    System.out.println("Reading Relevant Scores...");
 
-          while(line!=null) {
-              String[] score = line.split(" ");
-              switch(score[2]){
-                  case "1":
-                	  score[2]="4";
-                      break;
-                  case "2":
-                	  score[2]="3";
-                      break;
-                  case "3":
-                	  score[2]="2";
-                      break;
-                  case "4":
-                	  score[2]="1";
-                      break;
-                  case "-1":
-                	  score[2]="5";
-                      break;
-              }
-        	  iwriter.println(score[0]+" 0 "+score[1]+" "+score[2]);
-        	  line = br.readLine();
-          }
-          System.out.println("Correction completed.");
-      }
-  }
+	    String line = br.readLine();
+
+	    for (int i = 0; i < 1837; i++) {
+	  	  String[] score = line.split(" ");
+	  	  switch(score[score.length-1]){
+	  	    case "1":
+	  		  score[score.length-1]="4";
+	  		  break;
+	  	    case "2":
+	  		  score[score.length-1]="3";
+	  		  break;
+	  	    case "3":
+	  		  score[score.length-1]="2";
+	  		  break;
+	  	    case "4":
+	  		  score[score.length-1]="1";
+	  		  break;
+	  	    case "-1":
+	  		  score[score.length-1]="5";
+	  		  break;
+	  	  }
+		  iwriter.println(score[0]+" 0 "+score[1]+" "+score[score.length-1]);
+		  line = br.readLine();
+	    }
+	    System.out.println("Correction completed.");
+	    iwriter.close();
+	    br.close();
+	  }
+	}
 }
-
