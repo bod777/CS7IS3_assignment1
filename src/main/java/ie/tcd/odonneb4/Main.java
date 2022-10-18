@@ -54,16 +54,16 @@ public class Main {
           while(line!=null) {
               String[] entry = line.split(" ");
               switch(entry[2]){
-                  case "1 ":
-                      entry[2]="4 ";
-                  case "2 ":
-                      entry[2]="3 ";
-                  case "3 ":
-                      entry[2]="2 ";
-                  case "4 ":
-                      entry[2]="1 ";
-                  case "-1 ":
-                      entry[2]="5 ";
+                  case "1":
+                      entry[2]="4";
+                  case "2":
+                      entry[2]="3";
+                  case "3":
+                      entry[2]="2";
+                  case "4":
+                      entry[2]="1";
+                  case "-1":
+                      entry[2]="5";
               }
         	  iwriter.println(entry[0]+" 0 "+entry[1]+" "+entry[2]);
         	  line = br.readLine();
