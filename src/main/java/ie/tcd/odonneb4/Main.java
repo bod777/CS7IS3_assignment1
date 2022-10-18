@@ -39,7 +39,7 @@ public class Main {
     searcher.search_queries(scoring);
     System.out.println("Finished querying process for "+scoring+" test");
   }
-  public static void correct_qrel() {
+  public static void correct_qrel() throws IOException {
 	  System.out.println("Correcting cranqrel file for trec_eval process...");
 	  final Path qrelFile = Paths.get("cran/cranqrel");
 	  String correctedFile = "cran/cranqrel_corrected.txt";
