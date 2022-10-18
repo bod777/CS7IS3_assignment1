@@ -42,7 +42,7 @@ public class Main {
   public static void correct_qrel() throws IOException {
     System.out.println("Correcting cranqrel file for trec_eval process...");
     final Path qrelFile = Paths.get("cran/cranqrel");
-    String correctedFile = "cranqrel_corrected.txt";
+    String correctedFile = "cran/cranqrel_corrected.txt";
     PrintWriter iwriter = new PrintWriter(correctedFile, "UTF-8");
 
     InputStream stream = Files.newInputStream(qrelFile);
@@ -51,7 +51,7 @@ public class Main {
 
     String line = br.readLine();
 
-    for (int i = 0; i < 1837; i++) {
+    for (int i = 0; i < 1837; i++) {:wq
   	  String[] score = line.split(" ");
 	  switch(score[2]){
 	    case "1":
