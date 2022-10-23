@@ -24,12 +24,10 @@ package ie.tcd.odonneb4;
 
   public class CreateIndex
   {
-
-      // Directory where the search index will be saved
-      private static String INDEX_DIRECTORY = "index";
-
       public static void create_index(String scoring) throws IOException{
           final Path cranInput = Paths.get("cran/cran.all.1400");
+          // Directory where the search index will be saved
+          final String INDEX_DIRECTORY = "index/"+scoring;
 
           // Analyzer that is used to process TextField
           Analyzer analyzer = new EnglishAnalyzer();

@@ -35,11 +35,11 @@ import org.apache.lucene.store.FSDirectory;
 
 public class SearchQuery
 {
-    // Directory where the search index will be saved
-    private static String INDEX_DIRECTORY = "index";
 
     public static void search_queries(String scoring) throws ParseException, IOException{
         final Path cranQueries = Paths.get("cran/cran.qry");
+        // Directory where the search index will be saved
+        final String INDEX_DIRECTORY = "index/"+scoring;
 
         // Open the folder that contains our search index
         Directory directory = FSDirectory.open(Paths.get(INDEX_DIRECTORY));
