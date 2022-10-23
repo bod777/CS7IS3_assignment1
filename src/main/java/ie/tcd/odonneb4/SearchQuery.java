@@ -120,7 +120,7 @@ public class SearchQuery
                         // System.out.println(hits.length);
                         for (int i = 0; i < hits.length; ++i) { // 225 queries => 1000 hits. Results file - 225*1000
                                 Document doc = searcher.doc(hits[i].doc);
-                                iwriter.println(Integer.parseInt(id) + " 0 " + doc.get("id") + " " + i + " " + hits[i].score + " STANDARD");
+                                iwriter.println(Integer.parseInt(id) + " 0 " + doc.get("id") + " " + i + " " + hits[i].score + " "+scoring);
                         }
                         queryString = "";
                 }
